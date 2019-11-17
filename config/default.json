@@ -1,0 +1,22 @@
+{
+  "General": {
+    "serviceName": "single endpoint api"
+  },
+  "DB": {
+    "url": "mongodb://dbUser:dbPassword1@ds249623.mlab.com:49623/getir-case-study"
+  },
+  "Log": {
+    "logFile": "logfile.log",
+    "uncExcFile": "uncaughtExceptions.log"
+  },
+  "Swagger": {
+    "swaggerDefinition": {
+      "info": {
+        "title": "Rest API",
+        "version": "1.0.0",
+        "description": "single endpoint api for demo purposes"
+      }
+    },
+    "apis": ["./routes/*.js"]
+  }
+}
