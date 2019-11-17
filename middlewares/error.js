@@ -5,5 +5,8 @@ module.exports = (err, req, res, next) => {
     next();
   }
   winston.error(err.message, err);
-  res.status(500).send("unexpected_error");
+  res.status(500).send({
+    code: 500,
+    msg: "unexpected error"
+  });
 };
