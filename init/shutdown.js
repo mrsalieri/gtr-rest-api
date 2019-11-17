@@ -8,7 +8,6 @@ module.exports = server => {
     process.on(sig, () => {
       // Stops the server from accepting new connections and finishes existing connections.
       server.close(err => {
-        console.log(err);
         if (err) {
           winston.error(err);
           process.exit(1);

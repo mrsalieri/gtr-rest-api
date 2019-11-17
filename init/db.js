@@ -12,7 +12,7 @@ module.exports = () => {
     })
     .then(() => {
       if (process.env.NODE_ENV !== "test")
-        winston.info(`Connected to ${db}...`);
+        winston.info("Connected to database");
     })
     .catch(err => {
       winston.error(err.message, err);

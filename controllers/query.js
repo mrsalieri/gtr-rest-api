@@ -4,14 +4,15 @@ const { arrayHelper } = require("../utils/commonHelpers");
 const { isArrayWithElements } = arrayHelper;
 
 class QueryController {
-  constructor({ recordsModel, responseData }) {
+  constructor({ recordsModel, responseHandler }) {
     this.Records = recordsModel;
-    this.ResponseData = responseData;
+    this.ResponseHandler = responseHandler;
   }
 
   async queryTest({ startDate, endDate, minCount, maxCount }) {
-    const responseHandler = new this.ResponseData();
+    const responseHandler = new this.ResponseHandler();
 
+    // Get data
     const response = await this.Records.aggregate([
       {
         $project: {
@@ -29,7 +30,7 @@ class QueryController {
           },
           createdAt: {
             $gte: moment.utc(startDate, "YYYY-MM-DD").toDate(),
-            $lte: moment
+            $lte: moment // converts end date to YYYY-MM-DD 23:59:59
               .utc(endDate, "YYYY-MM-DD")
               .add(1, "day")
               .subtract(1, "second")

@@ -1,6 +1,6 @@
 {
   "name": "gtr-rest-api",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Single endpoint rest api for demo purposes",
   "main": "server.js",
   "scripts": {

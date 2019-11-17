@@ -5,5 +5,5 @@ const instances = require("../utils/instances");
 
 instances.queryController = new QueryController({
   recordsModel: Records,
-  responseData: ResponseData
+  responseHandler: ResponseData
 });
